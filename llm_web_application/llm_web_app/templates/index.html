@@ -1,0 +1,157 @@
+{% load static %}
+{% csrf_token %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>ICT Ministry Web Application Wireframe</title>
+    
+</head>
+<body>
+
+    <div class="header">
+        <img src="{% static 'images/logo.png' %}" alt="Logo" height="40">
+         ICT Ministry Web Application
+        <div class="profile">
+            <img src="{% static 'images/profile.png' %}" alt="Profile" height="30">
+        </div>
+    </div>
+
+    <div class="nav">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#document-analysis">Document Analysis</a>
+        <a href="#comparative-analysis">Comparative Analysis</a>
+        <a href="#strategy-development">Strategy Development</a>
+        <a href="#news-feed">News Feed</a>
+        <a href="#search-filter">Search/Filter</a>
+    </div>
+
+    <div class="container" id="dashboard">
+        <div class="widget">
+            <h3>Key Metrics</h3>
+            <p>Policy alignment scores, comparative insights.</p>
+        </div>
+        <div class="widget">
+            <h3>Recent Activity</h3>
+            <p>Recent policy document uploads.</p>
+        </div>
+        <div class="widget">
+            <h3>News and Report Feeds</h3>
+            <p>Live feed of relevant news articles and updates.</p>
+        </div>
+    </div>
+
+    <div class="container" id="document-analysis">
+        <div class="upload-area" id="upload-area">
+            <p id="upload-file-name">Drag and Drop documents here for analysis</p>
+        </div>
+        <div class="loader" id="loader">
+            <div class="spinner"></div>
+            <div class="loader-text"></div>
+            
+        </div>
+        
+        <h4>Document Summary</h4>
+        <div class="summary">
+
+        </div>
+    </div>
+
+    <div class="container" id="comparative-analysis">
+        <h3>Comparative Analysis</h3>
+        <div class="upload-options">
+            <label for="country-select">Select Country:</label>
+            <select id="country-select">
+                <option value="bangladesh">Bangladesh</option>
+                <option value="india">India</option>
+                <option value="pakistan">Pakistan</option>
+                <option value="singapore">Singapore</option>
+                <option value="thailand">Thailand</option>
+                <option value="usa">United States</option>
+                <option value="canada">Canada</option>
+                <option value="australia">Australia</option>
+                <option value="uk">United Kingdom</option>
+                <option value="germany">Germany</option>
+                <option value="france">France</option>
+                <option value="japan">Japan</option>
+                <option value="china">China</option>
+                <option value="brazil">Brazil</option>
+
+            </select>
+
+            <label for="document-upload">Upload Documents:</label>
+            <input type="file" id="document-upload" accept=".doc,.docx,.pdf,.txt">
+            <label for="news-upload">Upload News Articles or Provide Links:</label>
+            <input type="file" id="news-upload" accept=".doc,.docx,.pdf,.txt">
+            <input type="text" id="news-link" placeholder="Enter link here"> 
+            <button id="submit-btn">Submit</button>
+            <div class="SummaryOfOtherDocs">
+                <div id ="KEC">
+                    <p>Document Summary</p>
+                    <ul>
+                        <p>working procedure:</p>  
+                        <li><p>Document to extract contents</p></li>
+                        <li><p>API : Gemini ( for text summarization)</p></li> 
+                    </ul>
+                </div>
+            </div>
+            <div id="results-area">
+                <p>Comparative Analysis: No results yet, Please upload a document.</p>
+                <ul>
+                    <p>working procedure:</p>  
+                    <li><p>Documents to extract contents</p></li>
+                    <li><p>API : Gemini ( for text comparative-analysis)</p></li> 
+                </ul>
+            </div>
+        </div>
+        <div class="comparison-matrix">
+            <div class="item">
+                <h4>Comparative Policy Document(s) of Other Countries</h4>
+                <p>Key similarities and differences in policies.</p>
+            </div>
+            <div class="item">
+                <h4>Evaluation against Global Leaders' Speeches</h4>
+                <p>Insights and implications drawn from speeches by global leaders.</p>
+            </div>
+            <div class="item">
+                <h4>Evaluation against Recent News of Advancement</h4>
+                <p>Correlation with recent advancements in ICT globally.</p>
+            </div>
+            <div class="item">
+                <h4>Evaluation against Selected Journal Articles</h4>
+                <p>Academic perspectives addressing challenges and opportunities.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="strategy-development">
+        <div class="widget">
+            <h3>Strategy Development Guidance</h3>
+            <p>Input goals, generate recommendations, view visual benchmarks.</p>
+        </div>
+    </div>
+
+    <div class="container" id="news-feed">
+        <div class="widget">
+            <h3>Real-Time News and Reports Feed</h3>
+            <p>Filter options, save and annotate, quick actions.</p>
+        </div>
+    </div>
+
+    <div class="container" id="search-filter">
+        <div class="widget">
+            <h3>Search and Filter</h3>
+            <p>Advanced search bar, personalized options.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 ICT Ministry Web Application
+    </div>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+
+</body>
+</html>
