@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-*9txc7!fab=^pm3_n#4z)ed7)g#w6wcago6t0^o_zqfh16z^a9
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Application definition
 
@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'corsheaders',
+    'rest_framework',
     "llm_web_app",
+
 ]
 
 MIDDLEWARE = [
@@ -48,6 +51,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = "llm_web_application.urls"
@@ -125,6 +130,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 import os
+
+# settings.py
+DATA_UPLOAD_MAX_MEMORY_SIZE = 52428800  # 50 MB
 
 # Add the following lines to handle media files
 MEDIA_URL = '/media/'
