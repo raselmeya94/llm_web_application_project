@@ -6,8 +6,7 @@
 This guide assumes you have Python 3.10 or a later version installed. If not, refer to the official documentation for your operating system (OS) on how to install Python. Package manager commands like `sudo apt` (Ubuntu), `curl` (generic), or `brew` (macOS) might be used.
 
 ### Package Manager (Pip):
-Verify that you have either `pip` (the default package manager for Python) or `con installed. If not, installation instructions are usually available online for your specific OS.
-
+Verify that `pip` (the default package manager for Python) is installed. If it is not installed, you can find installation instructions online for your specific OS.
 
 
 ## Creating a Project Directory and Virtual Environment
